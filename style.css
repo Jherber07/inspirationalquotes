@@ -1,0 +1,214 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300);
+html, body {
+  height: 85%;
+}
+
+body {
+  font-family: "Source Serif Pro", Georgia, "Times New Roman", Times, serif;
+  background-color: #fff;
+  font-size: 25px;
+  line-height: 1.4;
+}
+
+h1 {
+  position: relative;
+}
+
+.align {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quote {
+  position: relative;
+  width: 35em;
+  margin: 0;
+  padding-left: 4em;
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.anim-fadeIn {
+  -webkit-animation: fadeIn 340ms cubic-bezier(0, 0.2, 0.6, 0.1) forwards;
+          animation: fadeIn 340ms cubic-bezier(0, 0.2, 0.6, 0.1) forwards;
+}
+
+.anim-fadeOut {
+  -webkit-animation: fadeOut 340ms cubic-bezier(0, 0.2, 0.6, 0.1) forwards;
+          animation: fadeOut 340ms cubic-bezier(0, 0.2, 0.6, 0.1) forwards;
+}
+
+.quote::before {
+  content: "“";
+  position: absolute;
+  top: 0;
+  left: 0.325em;
+  font-size: 4em;
+  font-weight: 800;
+  line-height: 1;
+  color: #000000;
+}
+
+.quote__body {
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
+.quote__author {
+  font-size: 0.75em;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1;
+  vertical-align: middle;
+  color: #000000;
+}
+.quote__author::before {
+  content: "—";
+  padding-right: 0.25em;
+}
+
+.flash {
+  position: absolute;
+  left: 0;
+  top: 1em;
+  right: 0;
+  text-align: center;
+}
+
+.flash--error {
+  color: #EC7735;
+}
+
+.hint {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.675em;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  opacity: 0.25;
+  transition: opacity 250ms linear;
+}
+
+.is-hidden {
+  opacity: 0;
+}
+
+kbd {
+  font-family: "Menlo", "Courier New", Courier, monospace;
+  font-size: 0.875em;
+  letter-spacing: 0;
+  padding: 0.05em 0.375em 0.04em 0.375em;
+  border: 1px solid #000;
+  border-radius: 0.25em;
+}
+
+section.page-container {
+  margin: auto;
+  width: 10%;
+  max-width: 800px;
+  height: 10vh;
+  position: relative;
+  text-align: center;
+}
+
+/*** General Button Styles ***/
+/*** Import Fonts ***/
+.button-container {
+  display: inline-block;
+  margin: 10px 10px;
+  cursor: pointer;
+  font-weight: 400;
+  letter-spacing: 2px;
+  height: 45px;
+  width: 200px;
+  -ms-perspective: 1000;
+  perspective: 1000;
+}
+.button-container .flipper {
+  transition: all 0.5s ease-in-out;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.button-container .button {
+  height: 45px;
+  width: 200px;
+  border-radius: 3px;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 1px 2px 4px -1px rgba(60, 60, 60, 0.64);
+}
+.button-container .button i.fa {
+  color: white;
+  font-size: 20px;
+  margin: auto;
+  text-shadow: 0.5px 1px 2px #3c3c3c;
+}
+.button-container .button.front {
+  z-index: 10;
+}
+.button-container .button.back {
+  color: white;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+/*** Vertical Flip ***/
+/***.button-flip-vertical {
+
+	.flipper-flip-vertical {
+    	transform-origin: 100% 22.5px;
+	}
+
+	.front {
+    	background-image:  linear-gradient(90deg, #DC1C13, #F07470);
+  	}
+
+  	.back {
+  		transform: rotateX(180deg);
+  		background-image:  linear-gradient(90deg, #F07470, #DC1C13);
+  	}
+
+  	&:hover .flipper-flip-vertical {
+		transform: rotateX(-180deg);
+	}
+}***/
